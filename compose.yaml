@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web20
+
+
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+    
+    ports:
+      - "9090:80"
+    
+    restart: unless-stopped
